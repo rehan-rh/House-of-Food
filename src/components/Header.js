@@ -1,18 +1,14 @@
 import { useState } from "react";
-import Logo from "../assets/img/food_villa.jpg";
+import Logo from "../assets/img/logo.png";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-
-const LoggedInUser = () => {
-  return true;
-};
 
 const Title = () => {
   return (
     <Link to="/">
       <img
         data-testid="logo"
-        className="h-16 sm:h-20 md:h-24 transition-transform duration-300 hover:scale-105"
+        className="h-14 sm:h-16 transition-transform duration-300 scale-[1.8]"
         alt="logo"
         src={Logo}
       />
@@ -26,34 +22,34 @@ const Header = () => {
 
   return (
     <header className="bg-gradient-to-r from-cyan-400 to-blue-500 shadow-lg sticky top-0 z-20">
-      <div className="flex flex-col sm:flex-row justify-between items-center max-w-7xl mx-auto p-4">
+      <div className="flex justify-between items-center max-w-7xl mx-auto p-3 sm:p-4">
         {/* Logo Section */}
-        <div className="mb-4 sm:mb-0">
+        <div>
           <Title />
         </div>
 
         {/* Navigation Links */}
-        <nav className="flex flex-col sm:flex-row items-center text-white font-medium">
-          <ul className="flex flex-col sm:flex-row gap-4 sm:gap-8 text-lg">
+        <nav className="flex items-center">
+          <ul className="flex gap-6 text-white text-sm sm:text-base font-medium">
             <li>
-              <Link to="/" className="hover:text-yellow-300 transition-colors">
+              <Link to="/" className="hover:text-blue-400 transition-colors">
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/about" className="hover:text-yellow-300 transition-colors">
+              <Link to="/about" className="hover:text-blue-400 transition-colors">
                 About
               </Link>
             </li>
             <li>
-              <Link to="/contact" className="hover:text-yellow-300 transition-colors">
+              <Link to="/contact" className="hover:text-blue-400 transition-colors">
                 Contact
               </Link>
             </li>
             <li>
               <Link
                 to="/cart"
-                className="hover:text-yellow-300 transition-colors"
+                className="hover:text-blue-400 transition-colors"
                 data-testid="cart"
               >
                 Cart-{cartItems.length}
@@ -63,17 +59,17 @@ const Header = () => {
         </nav>
 
         {/* Login/Logout Button */}
-        <div className="mt-4 sm:mt-0">
+        <div>
           {isLoggedIn ? (
             <button
-              className="bg-red-500 text-white px-6 py-2 rounded-full shadow-md hover:bg-red-600 transition-colors"
+              className="bg-red-500 text-white px-4 py-1 rounded-full shadow hover:bg-red-600 transition-colors"
               onClick={() => setIsLoggedIn(false)}
             >
               Log Out
             </button>
           ) : (
             <button
-              className="bg-green-500 text-white px-6 py-2 rounded-full shadow-md hover:bg-green-600 transition-colors"
+              className="bg-green-500 text-white px-4 py-1.5 rounded-full shadow hover:bg-green-600 transition-colors"
               onClick={() => setIsLoggedIn(true)}
             >
               Log In

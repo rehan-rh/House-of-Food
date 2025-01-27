@@ -59,32 +59,7 @@ const Body = () => {
           </button>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center mt-4 md:mt-0">
-          <input
-            type="text"
-            value={user.name}
-            onChange={(e) =>
-              setUser({
-                ...user,
-                name: e.target.value,
-              })
-            }
-            className="p-2 border rounded-lg border-gray-300 focus:ring focus:ring-green-300 mr-2 mb-2 md:mb-0"
-            placeholder="Update Name"
-          />
-          <input
-            type="email"
-            value={user.email}
-            onChange={(e) =>
-              setUser({
-                ...user,
-                email: e.target.value,
-              })
-            }
-            className="p-2 border rounded-lg border-gray-300 focus:ring focus:ring-green-300"
-            placeholder="Update Email"
-          />
-        </div>
+       
       </div>
 
       {/* Restaurant List Section */}
